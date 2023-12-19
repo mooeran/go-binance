@@ -546,6 +546,10 @@ func (c *Client) NewFundingRateService() *FundingRateService {
 	return &FundingRateService{c: c}
 }
 
+func (c *Client) NewFundingInfoService() *FundingInfoService {
+	return &FundingInfoService{c: c}
+}
+
 // NewListUserLiquidationOrdersService init list user's liquidation orders service
 func (c *Client) NewListUserLiquidationOrdersService() *ListUserLiquidationOrdersService {
 	return &ListUserLiquidationOrdersService{c: c}

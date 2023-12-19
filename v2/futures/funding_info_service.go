@@ -9,8 +9,8 @@ import (
 type FundingInfo struct {
 	Symbol                   string `json:"symbol"`
 	AdjustedFundingRateCap   string `json:"adjustedFundingRateCap"`
-	AdjustedFundingRateFloor int64  `json:"adjustedFundingRateFloor"`
-	FundingIntervalHours     int64  `json:"fundingIntervalHours"`
+	AdjustedFundingRateFloor string `json:"adjustedFundingRateFloor"`
+	FundingIntervalHours     int    `json:"fundingIntervalHours"`
 	Disclaimer               bool   `json:"disclaimer"`
 }
 
@@ -18,7 +18,7 @@ type FundingInfoService struct {
 	c *Client
 }
 
-func (s *FundingRateService) Do(ctx context.Context, opts ...RequestOption) (res []*FundingInfo, err error) {
+func (s *FundingInfoService) Do(ctx context.Context, opts ...RequestOption) (res []*FundingInfo, err error) {
 	r := &request{
 		method:   http.MethodGet,
 		endpoint: "/fapi/v1/fundingInfo",
